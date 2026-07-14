@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  travelmemory-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_BACKEND_URL: "http://internal-travelmemory-backend-ilb-923127743.ap-south-1.elb.amazonaws.com"
+    image: travelmemory-frontend:latest
+    ports:
+      - "80:80"
+    container_name: travelmemory-frontend-app
