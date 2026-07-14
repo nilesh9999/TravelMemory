@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { baseUrl } from "../../url";
+// import { baseUrl } from "../../url";
 import axios from "axios";
+
 
 export default function AddExperience() {
   const [loading, setLoading] = useState(false)
@@ -20,7 +21,7 @@ export default function AddExperience() {
     const submitForm = () => {
         setLoading(true);
         console.log(formdata)
-        axios.post(`${baseUrl}/trip`, formdata)
+        axios.post(`/trip`, formdata)
         setLoading(false)
     }
 
